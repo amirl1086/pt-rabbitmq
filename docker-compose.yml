@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  rabbitmq:
+    build: 
+      context: .
+      dockerfile: Dockerfile.dev
+    environment:
+      RABBITMQ_DEFAULT_USER: "${RABBITMQ_DEFAULT_USER}"
+      RABBITMQ_DEFAULT_PASS: "${RABBITMQ_DEFAULT_PASS}"
+    networks:
+      - pt-dev-network
+    container_name: pt-rabbitmq
+
+networks:
+  pt-dev-network: 
+    name: pt-dev-network
