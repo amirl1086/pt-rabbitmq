@@ -2,6 +2,7 @@ version: "3.8"
 
 services:
   rabbitmq:
+    image: pt-rabbitmq
     build: 
       context: .
       dockerfile: Dockerfile.dev
